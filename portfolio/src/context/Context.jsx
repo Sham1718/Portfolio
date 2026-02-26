@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(false);
 
   const toggle = () => setDark((prev) => !prev);
 
