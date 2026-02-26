@@ -1,24 +1,27 @@
 const experiences = [
   {
-    role: "Frontend Developer",
-    company: "Company Name",
-    period: "2023 – Present",
-    description: "Built and maintained React applications, improved performance by 40%, and collaborated with design teams.",
-    type: "work",
-  },
-  {
-    role: "Backend Intern",
-    company: "Startup Name",
-    period: "2022 – 2023",
-    description: "Developed REST APIs with Node.js and Express, worked with PostgreSQL databases and deployment on AWS.",
-    type: "work",
-  },
-  {
-    role: "B.Tech Computer Science",
-    company: "Your University",
-    period: "2019 – 2023",
-    description: "Graduated with honors. Focused on software engineering, data structures, and web technologies.",
+    role: "B.E. Computer Engineering",
+    company: "Wadia College of Engineering (SPPU)",
+    period: "2019 – present",
+    description:
+      "Focused on backend engineering, machine learning, blockchain, cybersecurity, and algorithm design. Achieved SGPA 9.15 in Semester 7.",
     type: "edu",
+  },
+  {
+    role: "Backend Engineering Projects",
+    company: "Independent Projects",
+    period: "2024 – Present",
+    description:
+      "Built production-ready backend systems including RBAC authentication system (Spring Boot + JWT), Jira-style task manager, MERN expense tracker, and AI-based legal document summarizer using RAG.",
+    type: "work",
+  },
+  {
+    role: "Self-Driven Backend Practice",
+    company: "System Design & API Development",
+    period: "Ongoing",
+    description:
+      "Practicing advanced backend concepts including caching strategies, rate limiting, secure API design, database indexing, and layered architecture.",
+    type: "work",
   },
 ];
 

@@ -10,7 +10,7 @@ const About = () => {
           </div>
 
           <div className="absolute -bottom-5 -right-5 bg-indigo-500 text-white rounded-2xl px-6 py-4 shadow-xl">
-            <p className="text-2xl font-bold">2+</p>
+            <p className="text-2xl font-bold">1</p>
             <p className="text-xs">Years Experience</p>
           </div>
         </div>
@@ -37,9 +37,9 @@ const About = () => {
 
           <div className="grid grid-cols-2 gap-4 mt-2">
             {[
-              { label: "Name", value: "Your Name" },
-              { label: "Email", value: "you@email.com" },
-              { label: "Location", value: "Your City, Country" },
+              { label: "Name", value: "Shyam Bharaskar" },
+              { label: "Email", value: "sbharaskar8485@gmail.com" },
+              { label: "Location", value: "Pune , India" },
               { label: "Available", value: "Freelance / Full-time" },
             ].map((item) => (
               <div key={item.label}>
@@ -56,7 +56,8 @@ const About = () => {
           <a
             href="/resume.pdf"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
+            download
             className="mt-2 self-start px-6 py-3 rounded-full bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-medium transition-colors"
           >
             Download Resume ↓

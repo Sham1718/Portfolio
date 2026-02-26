@@ -1,38 +1,41 @@
 const projects = [
   {
-    title: "Project One",
-    description: "A full stack web app built with React and Node.js. Features authentication, real-time updates, and a clean UI.",
-    tech: ["React", "Node.js", "MongoDB", "Tailwind"],
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "Advanced RBAC System",
+    description:
+      "Designed and implemented a role-based access control system using Spring Boot and JWT authentication. Built dynamic role-permission mapping, secured REST APIs with authorization filters, and implemented token validation with expiry handling.",
+    tech: ["Java", "Spring Boot", "Hibernate", "JWT", "MySQL"],
+    github: "https://github.com/Sham1718/rbac-system",
+    live:null,
     color: "from-indigo-500/10 to-purple-500/10",
   },
   {
-    title: "Project Two",
-    description: "An e-commerce platform with cart, payments, and admin dashboard built with Next.js.",
-    tech: ["Next.js", "Stripe", "PostgreSQL", "TypeScript"],
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "Jira-Style Task Management System",
+    description:
+      "Built a backend-driven project management system with task creation, assignment, status workflows, and authentication. Implemented layered architecture, REST APIs, and optimized database queries for task filtering and performance.",
+    tech: ["Java", "Spring Boot", "React", "MySQL", "REST API"],
+    github: "https://github.com/Sham1718/Bug-Tracker",
+    live: null,
     color: "from-emerald-500/10 to-teal-500/10",
   },
   {
-    title: "Project Three",
-    description: "A real-time chat application with rooms, notifications, and file sharing.",
-    tech: ["React", "Socket.io", "Express", "Firebase"],
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "MERN Expense Tracker",
+    description:
+      "Developed a full-stack expense tracking application with JWT authentication, categorized transactions, analytics dashboard, and secure API endpoints. Deployed backend on Render and frontend on Vercel.",
+    tech: ["MongoDB", "Express", "React", "Node.js", "JWT"],
+    github: "https://github.com/Sham1718/expense-tracker",
+    live: "https://expense-tracker-rz5r.vercel.app/",
     color: "from-orange-500/10 to-rose-500/10",
   },
   {
-    title: "Project Four",
-    description: "A personal finance tracker with charts, budgeting tools, and CSV export.",
-    tech: ["React", "Chart.js", "Node.js", "MySQL"],
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "Legal Document Summarizer (RAG-based)",
+    description:
+      "Built an AI-powered legal document summarizer using Python and Retrieval-Augmented Generation (RAG). Implemented text preprocessing, data cleaning, embedding generation, and contextual retrieval for accurate summaries.",
+    tech: ["Python", "RAG", "NLP", "Data Cleaning", "AI"],
+    github: "https://github.com/Sham1718/Legal-Document-Summarizer-",
+    live: null,
     color: "from-blue-500/10 to-cyan-500/10",
   },
 ];
-
 const Projects = () => {
   return (
     <section id="projects" className="py-24 bg-gray-50 dark:bg-gray-900 px-6">
@@ -68,10 +71,11 @@ const Projects = () => {
                   className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-indigo-500 transition-colors">
                   GitHub ↗
                 </a>
+                {project.live&&
                 <a href={project.live} target="_blank" rel="noreferrer"
                   className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-indigo-500 transition-colors">
                   Live Demo ↗
-                </a>
+                </a>}
               </div>
             </div>
           ))}

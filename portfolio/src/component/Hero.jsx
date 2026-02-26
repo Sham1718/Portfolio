@@ -14,12 +14,12 @@ const Hero = () => {
         {/* Left - Text */}
         <div className="flex flex-col gap-5">
           <span className="text-sm font-medium text-indigo-500 tracking-widest uppercase">
-            👋 Hello, I'm
+             Hello, I'm
           </span>
 
           <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white leading-tight">
-            Your <br />
-            <span className="text-indigo-500">Name</span>
+            Shyam <br />
+            <span className="text-indigo-500">Bharaskar</span>
           </h1>
 
           <h2 className="text-xl md:text-2xl font-medium text-gray-500 dark:text-gray-400">
@@ -51,7 +51,7 @@ const Hero = () => {
           {/* Social Links */}
           <div className="flex items-center gap-5 mt-2">
             <a
-              href="https://github.com"
+              href="https://github.com/Sham1718"
               target="_blank"
               rel="noreferrer"
               className="text-gray-500 dark:text-gray-400 hover:text-indigo-500 transition-colors text-sm font-medium"
@@ -60,7 +60,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/shyambharaskar"
               target="_blank"
               rel="noreferrer"
               className="text-gray-500 dark:text-gray-400 hover:text-indigo-500 transition-colors text-sm font-medium"
@@ -90,12 +90,12 @@ const Hero = () => {
 
             <div className="absolute top-4 -right-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-2 shadow-lg">
               <p className="text-xs text-gray-500 dark:text-gray-400">Experience</p>
-              <p className="text-sm font-bold text-gray-900 dark:text-white">2+ Years</p>
+              <p className="text-sm font-bold text-gray-900 dark:text-white">0 Years</p>
             </div>
 
             <div className="absolute bottom-4 -left-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-2 shadow-lg">
               <p className="text-xs text-gray-500 dark:text-gray-400">Projects</p>
-              <p className="text-sm font-bold text-gray-900 dark:text-white">10+ Done</p>
+              <p className="text-sm font-bold text-gray-900 dark:text-white">7+ Done</p>
             </div>
           </div>
         </div>

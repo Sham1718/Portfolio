@@ -1,8 +1,56 @@
 const skills = [
-  { category: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML", "CSS"] },
-  { category: "Backend", items: ["Node.js", "Express", "REST API", "GraphQL"] },
-  { category: "Database", items: ["MongoDB", "PostgreSQL", "MySQL", "Firebase"] },
-  { category: "Tools", items: ["Git", "GitHub", "Docker", "VS Code", "Figma", "Postman"] },
+  {
+    category: "Backend Engineering",
+    items: [
+      "Java",
+      "Spring Boot",
+      "Hibernate / JPA",
+      "REST API Design",
+      "JWT Authentication",
+      "RBAC",
+      "Node.js",
+      "Express.js"
+    ],
+  },
+  {
+    category: "Databases",
+    items: [
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Database Indexing",
+      "Query Optimization"
+    ],
+  },
+  {
+    category: "Frontend",
+    items: [
+      "JavaScript",
+      "React",
+      "HTML",
+      "CSS",
+      "Tailwind CSS"
+    ],
+  },
+  {
+    category: "Tools & Deployment",
+    items: [
+      "Git",
+      "GitHub",
+      "Postman",
+      "Vercel",
+      "Render"
+    ],
+  },
+  {
+    category: "Python & AI Basics",
+    items: [
+      "Python",
+      "Data Cleaning",
+      "RAG Basics",
+      "Basic AI Concepts"
+    ],
+  },
 ];
 
 const Skills = () => {
