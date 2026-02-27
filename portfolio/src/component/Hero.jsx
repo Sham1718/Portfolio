@@ -104,7 +104,7 @@ const Hero = () => {
                 Projects
               </p>
               <p className="text-sm font-bold text-black dark:text-white">
-                7+
+                10+
               </p>
             </div>
 

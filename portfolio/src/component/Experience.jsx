@@ -4,7 +4,7 @@ const experiences = [
   {
     role: "B.E. Computer Engineering",
     company: "Wadia College of Engineering (SPPU)",
-    period: "2019 – Present",
+    period: "2022 – Present",
     description:
       "Focused on backend engineering, machine learning, blockchain, cybersecurity, and algorithm design. Achieved SGPA 9.15 in Semester 7.",
   },
