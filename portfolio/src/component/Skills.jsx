@@ -1,4 +1,5 @@
-// src/components/Skills.jsx
+import { motion } from "framer-motion";
+
 const skills = [
   {
     category: "Backend Engineering",
@@ -47,41 +48,66 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="py-24 bg-white dark:bg-[#0B0F14] px-6 transition-colors duration-300"
+      className="py-24 bg-[#0B0F14] px-6"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <span className="text-sm font-medium text-neutral-500 dark:text-[#94A3B8] tracking-widest uppercase">
+
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-16"
+        >
+          <span className="text-sm font-medium text-[#94A3B8] tracking-widest uppercase">
             What I Know
           </span>
-          <h2 className="text-4xl font-bold text-black dark:text-white mt-2">
+
+          <h2 className="text-4xl font-bold text-white mt-2">
             Skills & Technologies
           </h2>
-        </div>
+        </motion.div>
 
+        {/* Skills Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skills.map((group) => (
-            <div
+          {skills.map((group, index) => (
+            <motion.div
               key={group.category}
-              className="bg-neutral-100 dark:bg-[#11161C] rounded-2xl p-6 border border-neutral-200 dark:border-[#1F2933]"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.1,
+              }}
+              whileHover={{ y: -5 }}
+              className="bg-[#11161C] rounded-2xl p-6 border border-[#1F2933] hover:bg-[#161C23] transition-colors"
             >
-              <h3 className="text-sm font-semibold text-black dark:text-white uppercase tracking-widest mb-4">
+
+              {/* Category */}
+              <h3 className="text-sm font-semibold text-white uppercase tracking-widest mb-4">
                 {group.category}
               </h3>
 
+              {/* Skill Tags */}
               <div className="flex flex-wrap gap-2">
                 {group.items.map((skill) => (
-                  <span
+                  <motion.span
                     key={skill}
-                    className="px-3 py-1.5 rounded-full text-xs font-medium bg-white dark:bg-[#161C23] text-neutral-700 dark:text-[#94A3B8] border border-neutral-200 dark:border-[#1F2933] hover:bg-neutral-200 dark:hover:bg-[#1F2933] transition-colors"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                    className="px-3 py-1.5 rounded-full text-xs font-medium bg-[#161C23] text-[#94A3B8] border border-[#1F2933] hover:bg-[#1F2933]"
                   >
                     {skill}
-                  </span>
+                  </motion.span>
                 ))}
               </div>
-            </div>
+
+            </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-// src/components/Projects.jsx
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -39,66 +39,90 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-24 bg-white dark:bg-[#0B0F14] px-6 transition-colors duration-300"
+      className="py-24 bg-[#0B0F14] px-6"
     >
       <div className="max-w-6xl mx-auto">
 
-        <div className="text-center mb-16">
-          <span className="text-sm font-medium text-neutral-500 dark:text-[#94A3B8] tracking-widest uppercase">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-16"
+        >
+          <span className="text-sm font-medium text-[#94A3B8] tracking-widest uppercase">
             My Work
           </span>
-          <h2 className="text-4xl font-bold text-black dark:text-white mt-2">
+
+          <h2 className="text-4xl font-bold text-white mt-2">
             Featured Projects
           </h2>
-        </div>
+        </motion.div>
 
+        {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project) => (
-            <div
+          {projects.map((project, index) => (
+            <motion.div
               key={project.title}
-              className="rounded-2xl p-6 bg-neutral-100 dark:bg-[#11161C] border border-neutral-200 dark:border-[#1F2933] hover:dark:bg-[#161C23] transition-colors duration-300"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.12 }}
+              whileHover={{ y: -6 }}
+              className="rounded-2xl p-6 bg-[#11161C] border border-[#1F2933] hover:bg-[#161C23] transition-colors duration-300"
             >
-              <h3 className="text-xl font-bold text-black dark:text-white mb-3">
+
+              {/* Title */}
+              <h3 className="text-xl font-bold text-white mb-3">
                 {project.title}
               </h3>
 
-              <p className="text-sm text-neutral-600 dark:text-[#94A3B8] leading-relaxed mb-5">
+              {/* Description */}
+              <p className="text-sm text-[#94A3B8] leading-relaxed mb-5">
                 {project.description}
               </p>
 
+              {/* Tech Stack */}
               <div className="flex flex-wrap gap-2 mb-6">
                 {project.tech.map((tech) => (
-                  <span
+                  <motion.span
                     key={tech}
-                    className="px-3 py-1.5 rounded-full text-xs font-medium bg-white dark:bg-[#161C23] text-neutral-700 dark:text-[#94A3B8] border border-neutral-200 dark:border-[#1F2933]"
+                    whileHover={{ scale: 1.05 }}
+                    className="px-3 py-1.5 rounded-full text-xs font-medium bg-[#161C23] text-[#94A3B8] border border-[#1F2933]"
                   >
                     {tech}
-                  </span>
+                  </motion.span>
                 ))}
               </div>
 
+              {/* Links */}
               <div className="flex gap-6 text-sm font-medium">
-                <a
+
+                <motion.a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-neutral-600 dark:text-[#94A3B8] hover:text-black dark:hover:text-white transition-colors"
+                  whileHover={{ x: 2 }}
+                  className="text-[#94A3B8] hover:text-white transition-colors"
                 >
                   GitHub
-                </a>
+                </motion.a>
 
                 {project.live && (
-                  <a
+                  <motion.a
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-neutral-600 dark:text-[#94A3B8] hover:text-black dark:hover:text-white transition-colors"
+                    whileHover={{ x: 2 }}
+                    className="text-[#94A3B8] hover:text-white transition-colors"
                   >
                     Live Demo
-                  </a>
+                  </motion.a>
                 )}
               </div>
-            </div>
+
+            </motion.div>
           ))}
         </div>
 

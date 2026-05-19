@@ -1,105 +1,129 @@
-// src/components/Navbar.jsx
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { useTheme } from "../context/Context";
 
 const Navbar = () => {
-  const { dark, toggle } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const links = ["About", "Skills", "Projects", "Experience", "Contact"];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-white/90 dark:bg-[#11161C]/80 border-b border-neutral-200 dark:border-[#1F2933]">
+    <motion.nav
+      initial={{ y: -80 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#11161C]/80 border-b border-[#1F2933]"
+    >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
 
         {/* Logo */}
-        <a
+        <motion.a
           href="#hero"
-          className="text-xl font-semibold tracking-tight text-black dark:text-white"
+          whileHover={{ opacity: 0.8 }}
+          className="text-xl font-semibold tracking-tight text-white"
         >
           shyam.dev
-        </a>
+        </motion.a>
 
         {/* Desktop Links */}
         <ul className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
-            <li key={link}>
+          {links.map((link, index) => (
+            <motion.li
+              key={link}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.08 }}
+            >
               <a
                 href={`#${link.toLowerCase()}`}
-                className="text-sm text-neutral-600 dark:text-[#94A3B8] hover:text-black dark:hover:text-white transition-colors duration-200"
+                className="text-sm text-[#94A3B8] hover:text-white transition-colors duration-200"
               >
                 {link}
               </a>
-            </li>
+            </motion.li>
           ))}
         </ul>
 
-        {/* Right side */}
+        {/* Right Side */}
         <div className="flex items-center gap-3">
 
-          {/* Theme Toggle */}
-          <button
-            onClick={toggle}
-            className="w-10 h-10 rounded-full flex items-center justify-center bg-neutral-200 dark:bg-[#161C23] border border-neutral-300 dark:border-[#1F2933] hover:bg-neutral-300 dark:hover:bg-[#1F2933] transition-colors"
-          >
-            {dark ? "☀️" : "🌙"}
-          </button>
-
           {/* Contact Button */}
-          <a
+          <motion.a
             href="#contact"
-            className="hidden md:inline-flex items-center px-4 py-2 text-sm rounded-full bg-black text-white dark:bg-white dark:text-black hover:opacity-90 transition-opacity"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.2 }}
+            className="hidden md:inline-flex items-center px-4 py-2 text-sm rounded-full bg-white text-black hover:opacity-90 transition-opacity"
           >
             Contact
-          </a>
+          </motion.a>
 
           {/* Mobile Toggle */}
           <button
             onClick={() => setMenuOpen((p) => !p)}
             className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
           >
-            <span
-              className={`block w-5 h-0.5 bg-black dark:bg-white transition-all duration-300 ${
-                menuOpen ? "rotate-45 translate-y-2" : ""
-              }`}
+            <motion.span
+              animate={
+                menuOpen
+                  ? { rotate: 45, y: 8 }
+                  : { rotate: 0, y: 0 }
+              }
+              className="block w-5 h-0.5 bg-white"
             />
-            <span
-              className={`block w-5 h-0.5 bg-black dark:bg-white transition-all duration-300 ${
-                menuOpen ? "opacity-0" : ""
-              }`}
+
+            <motion.span
+              animate={
+                menuOpen
+                  ? { opacity: 0 }
+                  : { opacity: 1 }
+              }
+              className="block w-5 h-0.5 bg-white"
             />
-            <span
-              className={`block w-5 h-0.5 bg-black dark:bg-white transition-all duration-300 ${
-                menuOpen ? "-rotate-45 -translate-y-2" : ""
-              }`}
+
+            <motion.span
+              animate={
+                menuOpen
+                  ? { rotate: -45, y: -8 }
+                  : { rotate: 0, y: 0 }
+              }
+              className="block w-5 h-0.5 bg-white"
             />
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      <div
-        className={`md:hidden transition-all duration-300 overflow-hidden ${
-          menuOpen
-            ? "max-h-64 border-t border-neutral-200 dark:border-[#1F2933] bg-white dark:bg-[#11161C]"
-            : "max-h-0"
-        }`}
-      >
-        <ul className="px-6 py-4 flex flex-col gap-4">
-          {links.map((link) => (
-            <li key={link}>
-              <a
-                href={`#${link.toLowerCase()}`}
-                onClick={() => setMenuOpen(false)}
-                className="text-sm text-neutral-700 dark:text-[#94A3B8] hover:text-black dark:hover:text-white transition-colors"
-              >
-                {link}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </nav>
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden overflow-hidden border-t border-[#1F2933] bg-[#11161C]"
+          >
+            <ul className="px-6 py-4 flex flex-col gap-4">
+              {links.map((link, index) => (
+                <motion.li
+                  key={link}
+                  initial={{ opacity: 0, x: -15 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                >
+                  <a
+                    href={`#${link.toLowerCase()}`}
+                    onClick={() => setMenuOpen(false)}
+                    className="text-sm text-[#94A3B8] hover:text-white transition-colors"
+                  >
+                    {link}
+                  </a>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
 };
 
